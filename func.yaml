@@ -1,0 +1,27 @@
+specVersion: 0.36.0
+name: quarkus-demo2
+runtime: quarkus
+registry: quay.io/mvinkler
+image: quay.io/mvinkler/quarkus-demo2:latest
+created: 2024-01-02T16:02:08.489186514+01:00
+build:
+  git:
+    url: https://github.com/mvinkler/quarkus-demo2
+    revision: main
+  builder: pack
+  buildEnvs:
+  - name: BP_JVM_VERSION
+    value: "17"
+  - name: BP_NATIVE_IMAGE
+    value: "false"
+  - name: BP_MAVEN_BUILT_ARTIFACT
+    value: func.yaml target/quarkus-app/lib/ target/quarkus-app/*.jar target/quarkus-app/app/
+      target/quarkus-app/quarkus/
+  - name: BP_MAVEN_BUILD_ARGUMENTS
+    value: package -DskipTests=true -Dmaven.javadoc.skip=true -Dquarkus.package.type=fast-jar
+  - name: MAVEN_S2I_ARTIFACT_DIRS
+    value: target/quarkus-app
+  - name: S2I_SOURCE_DEPLOYMENTS_FILTER
+    value: lib quarkus-run.jar app quarkus
+deploy:
+  remote: true
