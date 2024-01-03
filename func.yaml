@@ -8,7 +8,7 @@ build:
   git:
     url: https://github.com/mvinkler/quarkus-demo2
     revision: main
-  builder: pack
+  builder: s2i
   buildEnvs:
   - name: BP_JVM_VERSION
     value: "17"
