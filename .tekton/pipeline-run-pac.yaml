@@ -24,7 +24,7 @@ metadata:
     pipelinesascode.tekton.dev/task: git-clone
 
     # Fetch the func-buildpacks task
-    pipelinesascode.tekton.dev/task-1: https://raw.githubusercontent.com/openshift-knative/kn-plugin-func/serverless-1.31/pkg/pipelines/resources/tekton/task/func-buildpacks/0.2/func-buildpacks-pac.yaml
+    pipelinesascode.tekton.dev/task-1: https://raw.githubusercontent.com/openshift-knative/kn-plugin-func/serverless-1.31/pkg/pipelines/resources/tekton/task/func-s2i/0.1/func-s2i.yaml
 
     # Fetch the func-deploy task
     pipelinesascode.tekton.dev/task-2: https://raw.githubusercontent.com/openshift-knative/kn-plugin-func/serverless-1.31/pkg/pipelines/resources/tekton/task/func-deploy/0.1/func-deploy-pac.yaml
